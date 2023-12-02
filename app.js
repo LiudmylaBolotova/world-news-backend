@@ -2,11 +2,11 @@ const express = require("express");
 const moment = require("moment");
 const fs = require("fs/promises");
 const cors = require("cors");
+require("dotenv").config();
 
 const usersRouter = require("./routes/api/users");
 
 const app = express();
-require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
