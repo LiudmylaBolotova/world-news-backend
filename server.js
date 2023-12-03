@@ -1,7 +1,7 @@
 const app = require("./app");
 const mongoose = require("mongoose");
 const { DB_HOST } = process.env;
-console.log(DB_HOST)
+
 mongoose.set("strictQuery", true);
 
 mongoose
@@ -12,5 +12,5 @@ mongoose
   })
   .catch((error) => {
     console.log(error.message);
- 
+    process.exit(1);
   });
