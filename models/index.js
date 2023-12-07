@@ -2,7 +2,7 @@ const fs = require("fs/promises");
 const path = require("path");
 const { nanoid } = require("nanoid");
 
-const usersPath = path.join(__dirname);
+const usersPath = path.join(__dirname, "./users.json");
 
 const getAll = async () => {
   const data = await fs.readFile(usersPath);
