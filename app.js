@@ -1,6 +1,6 @@
-const express = require("express");
-const fs = require("fs/promises");
 const cors = require("cors");
+const express = require("express");
+
 require("dotenv").config();
 
 const usersRouter = require("./routes/api/users");
