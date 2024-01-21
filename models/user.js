@@ -39,9 +39,9 @@ userSchema.post("save", handleMongooseError);
 
 const addSchema = Joi.object({
   name: Joi.string().min(3).max(25).required(),
-  email: Joi.string().regex(emailRegex).required().email(),
+  email: Joi.string().regex(emailRegex).required().pattern(emailRegex),
   phone: Joi.string()
-    .regex(phoneRegex)
+    .pattern(phoneRegex)
     .required(),
   favorite: Joi.boolean(),
 });

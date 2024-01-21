@@ -3,6 +3,7 @@ const express = require("express");
 
 require("dotenv").config();
 
+const authRouter = require("./routes/api/auth");
 const usersRouter = require("./routes/api/users");
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/users", usersRouter);
+app.use("/api/auth", authRouter);
 
 app.use(async (req, res) => {
   res.status(404).json({

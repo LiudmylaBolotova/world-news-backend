@@ -12,7 +12,7 @@ const getFilter = async (req, res) => {
 };
 
 
-const getById = async (req, res, next) => {
+const getById = async (req, res) => {
   const { id } = req.params;
   const result = await User.findById(id);
   if (!result) {
@@ -26,7 +26,7 @@ const add = async (req, res) => {
   res.status(201).json(result);
 };
 
-const updateById = async (req, res, next) => {
+const updateById = async (req, res) => {
   const { id } = req.params;
   const result = await User.findByIdAndUpdate(id, req.body, { new: true });
   if (!result) {
@@ -44,7 +44,7 @@ const updateStatusUser = async (req, res) => {
   res.json(result);
 };
 
-const deleteById = async (req, res, next) => {
+const deleteById = async (req, res) => {
   const { id } = req.params;
   const result = await User.findByIdAndDelete(id);
   if (!result) {
